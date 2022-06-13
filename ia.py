@@ -21,7 +21,6 @@ class IA:
         self.__neurons[0] = inputs
         for idx in range(1,len(self.__neurons)):
             self.__neurons[idx] = tools.sigmoid(np.dot(self.__neurons[idx-1], self.__weights[idx-1]))
-        self.__back_propagation_is_ready = True
 
     def back_propagation(self,responses) -> bool:
         error = (responses - np.array(self.__neurons[len(self.__neurons)-1]))
@@ -33,4 +32,3 @@ class IA:
             delta.append(error*tools.sigmoidPrime(self.__neurons[i]))
         for i in reversed(range(0, len(self.__weights))):
             self.__weights[i] += np.dot(self.__neurons[i].T, delta[len(self.__weights)-1-i])
-        self.__back_propagation_is_ready = False
