@@ -26,7 +26,7 @@ class IA:
         error = (responses - np.array(self.__neurons[len(self.__neurons)-1]))
         delta = []        
         delta.append(error*tools.sigmoidPrime(self.__neurons[len(self.__neurons)-1]))
-        self.__price =  str(np.mean(np.abs(error)))
+        self.__price = str(np.mean(np.abs(error)))
         for i in reversed(range(1, len(self.__weights))):
             error = np.dot(delta[len(self.__weights)-1-i], self.__weights[i].T)
             delta.append(error*tools.sigmoidPrime(self.__neurons[i]))
