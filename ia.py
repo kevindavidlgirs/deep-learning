@@ -7,22 +7,22 @@ class IA:
         self.__weights = []
         self.__init_network()
 
-    def __init_network(self,) -> bool:
+    def __init_network(self,):
         self.__init_neurons():
         self.__init_weights()
 
-    def __init_neurons(self,) -> bool:
+    def __init_neurons(self,):
         [self.__neurons.append(np.array([0 for i in range(0, self.__layers[idx])])) for idx in range(0, len(self.__layers))]
 
-    def __init_weights(self,) -> bool:
+    def __init_weights(self,):
         [[self.__weights.append(2*np.random.random((len(self.__neurons[idx]), len(self.__neurons[idx+1])))-1)] for idx in range(0, len(self.__neurons)-1)]
 
-    def propagation(self,inputs) -> bool:
+    def propagation(self,inputs):
         self.__neurons[0] = inputs
         for idx in range(1,len(self.__neurons)):
             self.__neurons[idx] = tools.sigmoid(np.dot(self.__neurons[idx-1], self.__weights[idx-1]))
 
-    def back_propagation(self,responses) -> bool:
+    def back_propagation(self,responses):
         error = (responses - np.array(self.__neurons[len(self.__neurons)-1]))
         delta = []        
         delta.append(error*tools.sigmoidPrime(self.__neurons[len(self.__neurons)-1]))
