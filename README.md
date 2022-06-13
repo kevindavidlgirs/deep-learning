@@ -6,4 +6,4 @@ Version simplifiée et orienté objet d'une IA ainsi que ses fonctions permettan
 * **Kevin David L. Girs** - [kevindavidlgirs](https://github.com/kevindavidlgirs)
 
 ## Info
-Dans sa forme actuelle le projet est fonctionnel mais, il demande divers éléments qui ne sont pas présents dans sa version **light** (numpy, tools.Sigmoid), ..).
+Dans sa forme actuelle le projet est fonctionnel mais, il demande divers éléments qui ne sont pas présents dans sa version **light** (numpy, tools.Sigmoid, ..).
